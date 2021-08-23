@@ -1,0 +1,80 @@
+---
+layout: page
+title: "About"
+description: "闲而无所事事但又美梦做满"
+header-img: "img/post-bg-rwd.jpg"
+---
+
+
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>安徒生：<br>
+    作家的作品有两种，一种是让自己爽的，另一种是让读者爽的。</p></blockquote>
+
+    <p>你好，我是<strong>六年级</strong>，<del>当然我有很多套皮，</del>一般<span class="heimu">在混乱不堪的情况下还是</span>叫我小六比较直接。（捂嘴</p>
+
+    <p>画画，写文，还有很多很多我都想试着做一做。<del>不过一般都咕咕咕掉在刷网页了（狗头）</del></p>
+    
+    <p>我不是那种很能坚持做一件事的家伙，能一直坚持下去的也就做梦和划水了。</p>
+    
+    <p>更喜欢的是F/Z时期的韦伯维尔维特。<del>虽然第一眼看中的是UBW时期的二世（大概是这样？</del></p>
+    <p style="color:write">自卑且自大，傲慢且谦逊</p>
+    <p>可以的话还请不要太试图理解我的一些问题发言，毕竟有时候我也会不太理解这是为什么呢。</p>
+
+    <p>个人状态随时飘忽不定，并没有什么固定的口癖和特别喜欢的事物</p>
+    <p style="color:write">人类总是在试图理解人类</p>
+    <p>偶尔会翻一翻R18X-G的标签内容，但是有些R18X我会接受不了，可以的话还请不要直接端到我面前。</p>
+
+    <p>这个网站只是想记录一下自己的无聊之处</p>
+    <p style="color:write">竹帚日记真好啊<p>
+    <p>业余编程，但愿自己能提升一点英语知识。<del>（可能吗？）</del></p>
+    
+</div>
+
+
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+
+
+{% endif %}
+
